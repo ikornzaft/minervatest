@@ -2,6 +2,7 @@
   "name": "chakra-todo",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://www.afatecha.com/novoa/minerva-test",
   "dependencies": {
     "@chakra-ui/react": "^1.6.0",
     "@emotion/react": "^11.1.5",
@@ -9,12 +10,14 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "email-validator": "^2.0.4",
     "framer-motion": "^4.1.11",
     "nanoid": "^3.1.22",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
     "web-vitals": "^1.0.1"
   },
   "scripts": {

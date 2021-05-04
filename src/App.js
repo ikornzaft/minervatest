@@ -1,51 +1,18 @@
-import { Heading, VStack, IconButton, useColorMode} from '@chakra-ui/react';
-import TodoList from './components/TodoList';
-import AddTodo from './components/AddTodo';
-import { FaSun, FaMoon } from 'react-icons/fa';
-import { useState, useEffect } from 'react';
+import { React } from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import { Homepage } from './components/pages/homepage';
+import { Login } from './components/pages/login';
 
 function App() {
 
-  const [todos, setTodos] = useState(() => JSON.parse(localStorage.getItem('todos')) || [] );
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
-
-  function deleteTodo(id) {
-    const newTodos = todos.filter(todo => {
-      return todo.id !== id
-    });
-    setTodos(newTodos);
-  }
-  
-  function addTodo(todo) {
-    setTodos([...todos, todo])
-  }
-
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
-    <VStack p={4}>
-      <IconButton
-        icon={ colorMode === 'light' ? <FaSun /> : <FaMoon />}
-        isRound="true"
-        size="lg"
-        alignSelf="flex-end"
-        onClick={toggleColorMode}
-      />
-      <Heading
-        pb="8"
-        fontWeight="extrabold"
-        size="2xl"
-        bgGradient="linear(to-r, pink.500, pink.300, blue.500)"
-        bgClip="text"
-      >
-        Todo Application
-      </Heading>
-      <TodoList todos={todos} deleteTodo={deleteTodo} />
-      <AddTodo addTodo={addTodo} />
-    </VStack>
+    <Router basename={"/novoa/minerva-test"}>
+      <Switch>
+        <Route exact path='/' component={Login} />
+        <Route exact path='/homepage/' component={Homepage} />
+      </Switch>
+    </Router>
   );
 }
 
