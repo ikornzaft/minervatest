@@ -34,7 +34,7 @@ const useLogin = () => {
         history.push("/admin/dashboard");
       } */
       if (email === "ikornzaft@gmail.com" && password === "123456789") {
-        history.push("/homepage/");
+        history.push("/dashboard/");
       }
     } catch (e) {
       switch (e.response.status) {
